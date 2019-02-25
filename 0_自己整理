@@ -1,0 +1,27 @@
+
+
+卷积计算的从实现
+//output[z][y][x]+=input[k][y+j][x+i]*kernal[z][k][j][i]
+
+void conv2D(***input, ****kernal, ***output)
+{	
+	for(int z=0;z<kernal_z;k++)
+	{
+		for(int y=0;y<output_y;y++)
+		{
+			for(int x=0;x<output_x;x++)
+			{
+				for(int k=0;k<kernal_k;k++)
+				{
+					for(int j=0;j<kernal_j;j++)
+					{
+						for(int i=0;i<kernal_i;i++)
+						{
+							output[z][y][x]+=input[k][y+j][x+i]*kernal[z][k][j][i]
+						}
+					}
+				}
+			}
+		}
+	}
+}
